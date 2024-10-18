@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="M01"/>
+        <attribute name="authors" value="hp"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-18 10:41:00 AM"/>
+        <attribute name="created" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MTA6NDA6MjEgQU07MjU1NQ=="/>
+        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MTA6NDA6MzIgQU07MTtocDtMQVBUT1AtVVJUNkY3TEU7MjAyNC0xMC0xODswOTo1ODoxMiBBTTtNMDFbMV0uZnByZzs2MjM5"/>
+        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MTA6NDE6MDAgQU07MTsyNjYx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nilaihuruf" type="String" array="False" size=""/>
+            <declare name="angka, peforma" type="Real" array="False" size=""/>
+            <declare name="indeks" type="String" array="False" size=""/>
+            <input variable="indeks"/>
+            <while expression="indeks!=(&quot;---&quot;)">
+                <input variable="nilaihuruf"/>
+                <if expression="nilaihuruf=&quot;A&quot;">
+                    <then>
+                        <assign variable="angka" expression="4.0"/>
+                    </then>
+                    <else>
+                        <if expression="nilaihuruf=&quot;AB&quot;">
+                            <then>
+                                <assign variable="angka" expression="3.5"/>
+                            </then>
+                            <else>
+                                <if expression="nilaihuruf=&quot;B&quot;">
+                                    <then>
+                                        <assign variable="angka" expression="3.0"/>
+                                    </then>
+                                    <else>
+                                        <if expression="nilaihuruf=&quot;BC&quot;">
+                                            <then>
+                                                <assign variable="angka" expression="2.5"/>
+                                            </then>
+                                            <else>
+                                                <if expression="nilaihuruf=&quot;C&quot;">
+                                                    <then>
+                                                        <assign variable="angka" expression="2.0"/>
+                                                    </then>
+                                                    <else>
+                                                        <if expression="nilaihuruf=&quot;D&quot;">
+                                                            <then>
+                                                                <assign variable="angka" expression="1.0"/>
+                                                            </then>
+                                                            <else>
+                                                                <assign variable="angka" expression="0.0"/>
+                                                            </else>
+                                                        </if>
+                                                    </else>
+                                                </if>
+                                            </else>
+                                        </if>
+                                    </else>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="peforma" expression="ToInteger(indeks)*angka"/>
+                <output expression="ToFixed(peforma,1)" newline="True"/>
+                <input variable="indeks"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
