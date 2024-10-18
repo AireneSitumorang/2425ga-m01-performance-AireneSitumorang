@@ -4,60 +4,52 @@
         <attribute name="name" value="M01"/>
         <attribute name="authors" value="hp"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2024-10-18 11:31:32 AM"/>
-        <attribute name="created" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MTE6MzE6MDEgQU07MjU1NA=="/>
-        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MTE6MzE6MDcgQU07MTtNc2kgR0YgNjM7TVNJOzIwMjQtMTAtMTE7MDg6NTk6MDUgUE07TTAxLmZwcmc7NTU1OQ=="/>
-        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MTE6MzE6MzIgQU07MTsyNjY2"/>
+        <attribute name="saved" value="2024-10-18 01:53:31 PM"/>
+        <attribute name="created" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MDE6NTM6MTMgUE07MjU3NQ=="/>
+        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MDE6NTM6MTYgUE07MTtIUDtMQVBUT1AtVjE4NTFUNTY7MjAyNC0xMC0xODsxMjo1MjoyNyBQTTtNMDFbMV0uZnByZzs2MTE0"/>
+        <attribute name="edited" value="aHA7TEFQVE9QLVVSVDZGN0xFOzIwMjQtMTAtMTg7MDE6NTM6MzEgUE07MTsyNjgz"/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="totalkredit, indeks" type="Integer" array="False" size=""/>
-            <declare name="performa, indekssementara, performaakhir, nilaiangka" type="Real" array="False" size=""/>
-            <declare name="A, AB, B, BC, C, D, E" type="Real" array="False" size=""/>
-            <declare name="nilaihuruf, kredit" type="String" array="False" size=""/>
-            <assign variable="totalkredit" expression="4.0"/>
-            <input variable="kredit"/>
-            <while expression="kredit!=&quot;---&quot;">
-                <input variable="nilaihuruf"/>
-                <if expression="nilaihuruf=&quot;A&quot;">
+            <declare name="HURUF, GRADE" type="String" array="False" size=""/>
+            <declare name="SKS" type="Integer" array="False" size=""/>
+            <declare name="ANGKA, TOTAL" type="Real" array="False" size=""/>
+            <input variable="GRADE"/>
+            <while expression="GRADE!=&quot;---&quot;">
+                <assign variable="SKS" expression="ToInteger(GRADE)"/>
+                <input variable="HURUF"/>
+                <if expression="HURUF=&quot;A&quot;">
                     <then>
-                        <assign variable="nilaiangka" expression="4.0"/>
+                        <assign variable="ANGKA" expression="4.0"/>
                     </then>
                     <else>
-                        <if expression="nilaihuruf=&quot;AB&quot;">
+                        <if expression="HURUF=&quot;AB&quot;">
                             <then>
-                                <assign variable="nilaiangka" expression="3.5"/>
+                                <assign variable="ANGKA" expression="3.5"/>
                             </then>
                             <else>
-                                <if expression="nilaihuruf=&quot;B&quot;">
+                                <if expression="HURUF=&quot;B&quot;">
                                     <then>
-                                        <assign variable="nilaiangka" expression="3.0"/>
+                                        <assign variable="ANGKA" expression="3.0"/>
                                     </then>
                                     <else>
-                                        <if expression="nilaihuruf=&quot;BC&quot;">
+                                        <if expression="HURUF=&quot;BC&quot;">
                                             <then>
-                                                <assign variable="nilaiangka" expression="2.5"/>
+                                                <assign variable="ANGKA" expression="2.5"/>
                                             </then>
                                             <else>
-                                                <if expression="nilaihuruf=&quot;C&quot;">
+                                                <if expression="HURUF=&quot;C&quot;">
                                                     <then>
-                                                        <assign variable="nilaiangka" expression="2.0"/>
+                                                        <assign variable="ANGKA" expression="2.0"/>
                                                     </then>
                                                     <else>
-                                                        <if expression="nilaihuruf=&quot;D&quot;">
+                                                        <if expression="HURUF=&quot;D&quot;">
                                                             <then>
-                                                                <assign variable="nilaiangka" expression="1.0"/>
+                                                                <assign variable="ANGKA" expression="1.0"/>
                                                             </then>
                                                             <else>
-                                                                <if expression="nilaihuruf=&quot;E&quot;">
-                                                                    <then>
-                                                                        <assign variable="nilaiangka" expression="0.0"/>
-                                                                    </then>
-                                                                    <else>
-                                                                        <assign variable="nilaiangka" expression="0.0"/>
-                                                                    </else>
-                                                                </if>
+                                                                <assign variable="ANGKA" expression="0.0"/>
                                                             </else>
                                                         </if>
                                                     </else>
@@ -70,9 +62,9 @@
                         </if>
                     </else>
                 </if>
-                <assign variable="performa" expression="totalkredit*nilaiangka"/>
-                <output expression="performa" newline="True"/>
-                <input variable="kredit"/>
+                <assign variable="TOTAL" expression="ANGKA*SKS"/>
+                <output expression="Tofixed(TOTAL,1)" newline="True"/>
+                <input variable="GRADE"/>
             </while>
         </body>
     </function>

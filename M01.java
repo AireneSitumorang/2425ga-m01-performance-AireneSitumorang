@@ -8,47 +8,46 @@ public class M01 {
     private static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
-        int totalkredit, indeks;
-        double performa, indekssementara, performaakhir, nilaiangka;
-        double a, aB, b, bC, c, d, e;
-        String nilaihuruf, kredit;
+        String hURUF, gRADE;
+        int sKS;
+        double aNGKA, tOTAL;
 
-        totalkredit = 4.0;
-        kredit = input.nextLine();
-        while (!kredit.equals("---")) {
-            nilaihuruf = input.nextLine();
-            if (nilaihuruf.equals("A")) {
-                nilaiangka = 4.0;
+        gRADE = input.nextLine();
+        while (!gRADE.equals("---")) {
+            sKS = Integer.parseInt(gRADE);
+            hURUF = input.nextLine();
+            if (hURUF.equals("A")) {
+                aNGKA = 4.0;
             } else {
-                if (nilaihuruf.equals("AB")) {
-                    nilaiangka = 3.5;
+                if (hURUF.equals("AB")) {
+                    aNGKA = 3.5;
                 } else {
-                    if (nilaihuruf.equals("B")) {
-                        nilaiangka = 3.0;
+                    if (hURUF.equals("B")) {
+                        aNGKA = 3.0;
                     } else {
-                        if (nilaihuruf.equals("BC")) {
-                            nilaiangka = 2.5;
+                        if (hURUF.equals("BC")) {
+                            aNGKA = 2.5;
                         } else {
-                            if (nilaihuruf.equals("C")) {
-                                nilaiangka = 2.0;
+                            if (hURUF.equals("C")) {
+                                aNGKA = 2.0;
                             } else {
-                                if (nilaihuruf.equals("D")) {
-                                    nilaiangka = 1.0;
+                                if (hURUF.equals("D")) {
+                                    aNGKA = 1.0;
                                 } else {
-                                    if (nilaihuruf.equals("E")) {
-                                        nilaiangka = 0.0;
-                                    } else {
-                                        nilaiangka = 0.0;
-                                    }
+                                    aNGKA = 0.0;
                                 }
                             }
                         }
                     }
                 }
             }
-            performa = totalkredit * nilaiangka;
-            System.out.println(performa);
-            kredit = input.nextLine();
+            tOTAL = aNGKA * sKS;
+            System.out.println(toFixed(tOTAL,1));
+            gRADE = input.nextLine();
         }
+    }
+    
+    private static String toFixed(double value, int digits) {
+        return String.format("%." + digits + "f", value);
     }
 }
